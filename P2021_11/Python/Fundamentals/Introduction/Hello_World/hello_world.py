@@ -18,7 +18,7 @@ print(f"I love to eat {fave_food1} and {fave_food2}.") # with an f string
 name = "Ticara"
 name = 34
 fav_food1 = "pho"
-fav_food2 = "pasta"
+fav_food2 = "fries"
 print("Hello", "Ticara", "!")
 print("Hello" + " " + "Ticara!")
 
