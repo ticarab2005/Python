@@ -19,7 +19,7 @@ ticara = User ("Ticara")
 antonette = User("Antonette")
 sparkle = User("Sparkle")
 
-ticara.make_deposit(900).make_deposit(700).make_deposit(850).make_withdrawal(830).make_withdrawal(830)
+ticara.make_deposit(900).make_deposit(700).make_deposit(850).make_withdrawal(830)
 antonette.make_deposit(2500).make_deposit(1500).make_withdrawal(500).make_withdrawal(1000)
 sparkle.make_deposit(1500).make_withdrawal(500).make_withdrawal(750).make_withdrawal(400)
 
