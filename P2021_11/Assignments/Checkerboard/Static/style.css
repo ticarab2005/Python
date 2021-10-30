@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: red; 
+    font-size: 35px;
+}
+
+.box1{
+    background-color: black;
+    height:50px;
+    width: 50px;
+}
+.box2 {
+    background-color: red;
+    height:50px;
+    width: 50px;
+}
