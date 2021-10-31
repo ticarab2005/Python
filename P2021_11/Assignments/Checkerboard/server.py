@@ -5,7 +5,6 @@ app = Flask(__name__)
 def index():
     return render_template('index.html',row=8,col=8,box='red',box1='black')
 
-
 @app.route('/<int:x>')
 def one(x):
     return render_template ('index.html',row=x,col=8,box='red',box1='black')
