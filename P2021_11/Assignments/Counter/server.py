@@ -6,7 +6,7 @@ app.secret_key = 'Hakuna Matata'
 @app.route('/')
 def index():
     if "add" not in session:
-        session["add"] = 0
+        session["add"] = 1
     else:
         session['add'] += 2
     return render_template("index.html")
