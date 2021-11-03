@@ -1,0 +1,23 @@
+INSERT INTO dojos(name)
+VALUES
+("Ninja Vanish"),
+("Coding Dojo"),
+("Dojo Academy");
+
+SET SQL_SAFE_UPDATES = 0;
+Delete FROM dojos;
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id)
+VALUES ("Ticara","Bell",34,4),("Eileen","Jones", 60,4),("Tina","Payton", 65,4),
+			("Antonette","Wilson",52,5),("Sparkle","Howard",37,5),("Eric","Alarcon",20,5),
+			("Jackie","Agers",56,6),("Devon","Landfair",25,6),("Khaliq","Jones", 19,6);
+
+SELECT first_name, last_name FROM ninjas
+Where dojo_id = 4
+
+SELECT first_name, last_name FROM ninjas
+Where dojo_id = 6
+
+SELECT * FROM dojos
+LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id
+	WHERE dojos.id = (SELECT id FROM dojos ORDER BY id DESC LIMIT 1);
