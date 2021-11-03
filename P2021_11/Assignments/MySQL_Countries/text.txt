@@ -1,0 +1,6 @@
+Select countries.name as name, languages.language as language, languages.percentage as percentage FROM countries
+JOIN languages on countries.id = languages.country_id
+WHERE languages.language = "Slovene"
+ORDER BY languages.percentage DESC
+
+SELECT countries.name as name, cities.name as cities, 
