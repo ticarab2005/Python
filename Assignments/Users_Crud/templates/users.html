@@ -30,16 +30,15 @@
                 <td>{{ u.email }}</td>
                 <td>{{ u.created_at }}</td>
                 <td>
-                    <a href="/show/{{u.id}}" class="link-primary">Show |</a>
-                    <a href="/edit/{{u.id}}" class="link-secondary">Edit |</a>
-                    <a href="/delete/{{u.id}}" class="link-danger">Delete</a>
+                    <a href="/user/show/{{u.id}}" class="link-primary">Show |</a>
+                    <a href="/user/edit/{{u.id}}" class="link-secondary">Edit |</a>
+                    <a href="/user/delete/{{u.id}}" class="link-danger">Delete</a>
                 </td>
             </tr>
 
             {% endfor %}
         </tbody>
     </table>
-
     <a href="/user/new" class="btn btn-primary">Add User</a>
 </body>
 
