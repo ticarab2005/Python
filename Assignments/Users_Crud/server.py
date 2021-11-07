@@ -9,11 +9,12 @@ def index():
 
 @app.route('/users')
 def users():
+    print(User.get_all())
     return render_template("users.html",users=User.get_all())
 
 @app.route('/user/new')
 def new():
-    return render_template("newusers.html")
+    return render_template("new_users.html")
 
 @app.route('/user/create_user',methods=["POST"])
 def create_user():
@@ -22,20 +23,18 @@ def create_user():
     return redirect('/users')
 
 @app.route('/user/edit/<int:id>')
-def edit(id):
+def edit_user(id):
     data = {
         "id":id
     }
-    return render_template('edit_user.html',user=User.get_one(data))
-
+    return render_template('edit_user.html',u=User.get_one(data))
 
 @app.route('/user/show/<int:id>')
-def show(id):
+def show_user(id):
     data = {
         "id":id
     }
-    user = User.get_one(data)
-    return redirect("show_user.html",user=user)
+    return render_template('show_user.html',u=User.get_one(data))
 
 @app.route('/user/update',methods=["POST"])
 def update():
@@ -43,12 +42,14 @@ def update():
     return redirect('/users')
 
 @app.route('/user/delete/<int:id>')
-def delete(id):
+def delete_user(id):
     data = {
         "id":id
     }
-    User.delete(data)
+    User.delete_user(data)
     return redirect('/users')
+
+
 
 if __name__=="__main__":
     app.run(debug=True)

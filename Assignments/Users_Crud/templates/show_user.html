@@ -10,15 +10,22 @@
     <title>Results</title>
 </head>
 
-<body class="d-flex justify-content-center">
-    <h1>User{{id}}</h1>
-    <div class="bg-dark text-light p-4 mt-5" style="width: 700px; height: 310px;">
-        <h5 class="text-primary">Full Name: {{u.full_name}}</h5>
-        <h5 class="p-2">: Email: {{u.email}}</h5>
-        <h5 class="p-2">Created On: {{u.created_at}}</h5>
-        <h5 class="p-2 mb-5">Last Updated: {{u.update_at}}</h5>
-        <a href="/user/edit" class="link-primary">Edit<span class="px-4">|</span></a>
-        <a href="/user/delete" class="link-danger">Delete</a>
+<body>
+    <br>
+    <h1 class="text-center">User{{u.id}}</h1>
+    <div class="d-flex justify-content-center">
+        <div class="bg-dark text-light p-4 mt-5" style="width: 700px; height: 310px;">
+            <h5 class="text-primary">Full Name: {{u.full_name()}}</h5>
+            <h5 class="p-2">:Email: {{u.email}}</h5>
+            <br>
+            <h5 class="p-2">Created On: {{u.created_at}}</h5>
+            <h5 class="p-2">Last Updated: {{u.updated_at}}</h5>
+        </div>
     </div>
-
+    <br><br>
+    <a href="/user/edit/{{u.id}}" class="link-primary ms-5">Edit<span class="px-4">|</span></a>
+    <a href="/user/delete/{{u.id}}" class="link-danger">Delete</a>
+    <br><br>
+    <a href="/" class="ms-5">Home
 </body>
+</html>
