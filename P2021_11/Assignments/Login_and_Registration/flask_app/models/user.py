@@ -70,4 +70,7 @@ class User:
         if len(user["password"]) <=4:
             flash("Password must be more than 4 characters")
             is_valid = False
+        if len(user["password"]) !=user['confirm']:
+            flash("Password don't match")
+            is_valid = False
         return is_valid
