@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Edit Recipe</title>
+</head>
+
+<body>
+    <div class="d-flex justify-content-between">
+        <h1 class="ps-5">Welcome {{user.first_name}}!!!</h1>
+        <div class="d-inline-block">
+            <a class="fs-5 p-2" href="/dashboard">Dashboard</a>
+            <a class="fs-5" href="/logout">Logout</a>
+        </div>
+    </div>
+    <br><br>
+    <div class="d-flex justify-content-around">
+        <form action="/update/recipe" method="POST" class="col-4 bg-dark p-4 my-4 text-light">
+        <input type="hidden" name="id" value="{{edit.id}}">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p style="color:red">{{message}}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input style="width: 200px;" type="text" value="{{edit.name}}" name="name" class="form-control">
+            </div>
+            <div class="form-floating">
+                <label for="description">Description: </label><br>
+                <textarea name="description" class="form-control" style="height: 200px">{{edit.description}}</textarea>
+            </div>
+            <div class="form-floating">
+                <label for="instructions">Instructions: </label><br>
+                <textarea name="instructions" class="form-control"
+                    style="height: 200px">{{edit.instructions}}</textarea>
+            </div>
+            <label for="date_made" class="text-primary">Date Made On:</label>
+            <input type="date" name="date_made" value="{{edit.date_made}}">
+            <br><br>
+            <h5>Under 30 Minutes?</h5>
+            <br>
+            <form>
+                  <input type="radio" name="under30" value="0">
+                  <label for="under30">Yes</label>
+                  <input type="radio"        name="under30" value="1">
+                  <label for="under30">No</label>
+                <br><br>
+                <input type="submit" value="Update Recipe" class="btn btn-primary btn-outline-warning px-4">
+
+            </form>
+        </form>
+    </div>
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Edit User</title>
+</head>
+<body>
+    <div class="row mt-3">
+        <div class="col-4"></div>
+        <div class="container d-flex justify-content-center">
+            <div class="mb-3">
+                <h1 class="mt-4 pb-2 text-center">Edit User</h1>
+                <form class=" p-3" style="width: 800px;" action="/user/create_user" method="post">
+                    <div class="mb-3">
+                        <label for="first_name" class="form-label">First Name: </label>
+                        <input type="text" name="first_name" style="width: 650px;" class="form-control" id="first_name"
+                            aria-describedby="first_name">
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="last_name" class="form-label">Last Name: </label>
+                        <input type="text" name="last_name" style="width: 650px;" class="form-control" id="last_name"
+                            aria-describedby="last_name">
+                    </div>
+                    <br>
+                    <div class=" mb-3">
+                        <label for="email" class="form-label">Email: </label>
+                        <input type="text" name="email" style="width: 650px;" class="form-control" id="email"
+                            aria-describedby="email">
+                    </div>
+                    <br>
+                    <input href="#" type="submit" value="Edit" class="btn btn-primary btn-outline-warning">
+                    <input href="#" type="submit" value="Show User" class="btn btn-primary btn-outline-warning px-4">
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html> -->
